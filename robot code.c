@@ -53,8 +53,10 @@ task autonomous()
   // Insert user code here.
   // .....................................................................................
 
-	motor(pullBackR1);
-	motor(pullBackR1);
+	motor(pullBackR1) = 130;
+	motor(pullBackR2) = 130;
+	motor(pullBackL1) = 130;
+	motor(pullBackL2) = 130;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
@@ -68,6 +70,7 @@ task autonomous()
 
 task usercontrol()
 {
+	
 	int z = 0;
 	while (true)
 	{
@@ -93,9 +96,9 @@ task usercontrol()
 
 		//sets the motors equal to x
 		motor(pullBackR1) = x;
-	  motor(pullBackR2) = x;
-	  motor(pullBackL1) = x;
-	  motor(pullBackL2) = x;
+	  	motor(pullBackR2) = x;
+	  	motor(pullBackL1) = x;
+		motor(pullBackL2) = x;
 
 	  //Botton 8D stops the pull back
 	  if(vexRT(Btn8D)==1)
@@ -111,9 +114,9 @@ task usercontrol()
 		}
 
 		//cam shaft encoder``
-		int y = int;
-		if(Btn6U = 0){
-			if(z = 0){
+		int y;
+		if(Btn6U == 0){
+			if(z == 0){
 				y = SensorValue(camShaft);
 				z = 1;
 			}
@@ -123,7 +126,7 @@ task usercontrol()
 			if(SensorValue(camShaft) > y){
 						x = -80;
 			}
-			if(SensorValue(camShaft) = y){
+			if(SensorValue(camShaft) == y){
 						x = 0;
 			}
 		}
