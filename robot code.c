@@ -53,7 +53,8 @@ task autonomous()
   // Insert user code here.
   // .....................................................................................
 
-	AutonomousCodePlaceholderForTesting();  // Remove this function call once you have "real" code.
+	motor(pullBackR1);
+	motor(pullBackR1);
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////
